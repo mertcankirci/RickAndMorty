@@ -25,3 +25,17 @@ struct MainView_Previews: PreviewProvider {
         MainView()
     }
 }
+ /*
+  .onAppear(perform: {
+      RMService.shared.execute(.listOfCharactersRequest, expecting: RMGetAllCharactersResponse.self) { result in
+          switch result {
+          case .success(let success):
+              print("Total" + String(success.info.count))
+              print("Page result" + String(success.results.count))
+              
+          case .failure(let failure):
+              print(String(describing: failure))
+          }
+      }
+  })
+  */
