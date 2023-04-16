@@ -4,10 +4,9 @@
 //
 //  Created by Mertcan Kırcı on 16.04.2023.
 //
-
 import SwiftUI
 
-struct ContentView: View {
+struct MainView: View {
     var body: some View {
         VStack {
             Image(systemName: "globe")
@@ -17,10 +16,12 @@ struct ContentView: View {
         }
         .padding()
     }
+        
 }
+    
 
-struct ContentView_Previews: PreviewProvider {
+struct MainView_Previews: PreviewProvider {
     static var previews: some View {
-        ContentView()
+        MainView()
     }
 }
