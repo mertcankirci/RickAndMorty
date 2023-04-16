@@ -20,6 +20,8 @@
 		5468724129EC3A33007BCAC3 /* RMOrigin.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5468724029EC3A33007BCAC3 /* RMOrigin.swift */; };
 		5468724329EC3AA1007BCAC3 /* RMSingleLocation.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5468724229EC3AA1007BCAC3 /* RMSingleLocation.swift */; };
 		5468724929EC61AA007BCAC3 /* RMGetAllCharacterResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5468724829EC61AA007BCAC3 /* RMGetAllCharacterResponse.swift */; };
+		5468724B29EC87EC007BCAC3 /* LaunchScreenView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5468724A29EC87EC007BCAC3 /* LaunchScreenView.swift */; };
+		5468724D29EC8B0F007BCAC3 /* LaunchScreen -ViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5468724C29EC8B0F007BCAC3 /* LaunchScreen -ViewModel.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -37,6 +39,8 @@
 		5468724029EC3A33007BCAC3 /* RMOrigin.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RMOrigin.swift; sourceTree = "<group>"; };
 		5468724229EC3AA1007BCAC3 /* RMSingleLocation.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RMSingleLocation.swift; sourceTree = "<group>"; };
 		5468724829EC61AA007BCAC3 /* RMGetAllCharacterResponse.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RMGetAllCharacterResponse.swift; sourceTree = "<group>"; };
+		5468724A29EC87EC007BCAC3 /* LaunchScreenView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LaunchScreenView.swift; sourceTree = "<group>"; };
+		5468724C29EC8B0F007BCAC3 /* LaunchScreen -ViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "LaunchScreen -ViewModel.swift"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -93,6 +97,7 @@
 			isa = PBXGroup;
 			children = (
 				5468723229EC365C007BCAC3 /* MainView -ViewModel.swift */,
+				5468724C29EC8B0F007BCAC3 /* LaunchScreen -ViewModel.swift */,
 			);
 			path = ViewModel;
 			sourceTree = "<group>";
@@ -101,6 +106,7 @@
 			isa = PBXGroup;
 			children = (
 				5468722329EC1DB7007BCAC3 /* MainView.swift */,
+				5468724A29EC87EC007BCAC3 /* LaunchScreenView.swift */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -228,9 +234,11 @@
 				5468724929EC61AA007BCAC3 /* RMGetAllCharacterResponse.swift in Sources */,
 				5468723D29EC3940007BCAC3 /* RMLocation.swift in Sources */,
 				5468723B29EC3810007BCAC3 /* RMEndpoint.swift in Sources */,
+				5468724D29EC8B0F007BCAC3 /* LaunchScreen -ViewModel.swift in Sources */,
 				5468723729EC3738007BCAC3 /* RMService.swift in Sources */,
 				5468724129EC3A33007BCAC3 /* RMOrigin.swift in Sources */,
 				5468723329EC365C007BCAC3 /* MainView -ViewModel.swift in Sources */,
+				5468724B29EC87EC007BCAC3 /* LaunchScreenView.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

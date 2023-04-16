@@ -33,6 +33,7 @@ final class RMService {
             }
             
             do {
+                
                 let result = try JSONDecoder().decode(type.self, from: data)
                 completion(.success(result))
                 

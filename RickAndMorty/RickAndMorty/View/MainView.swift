@@ -7,14 +7,17 @@
 import SwiftUI
 
 struct MainView: View {
+    
+    @EnvironmentObject var launchScreenManager : LaunchScreenView.LaunchScreenManager
+    
     var body: some View {
-        VStack {
-            Image(systemName: "globe")
-                .imageScale(.large)
-                .foregroundColor(.accentColor)
-            Text("Hello, world!")
-        }
-        .padding()
+        
+        Text("Hello")
+            .onAppear() {
+                DispatchQueue.main.asyncAfter(deadline: .now()+5) {
+                    launchScreenManager.dismiss()
+                }
+            }
     }
         
 }
@@ -23,6 +26,7 @@ struct MainView: View {
 struct MainView_Previews: PreviewProvider {
     static var previews: some View {
         MainView()
+            .environmentObject(LaunchScreenView.LaunchScreenManager())
     }
 }
  /*
