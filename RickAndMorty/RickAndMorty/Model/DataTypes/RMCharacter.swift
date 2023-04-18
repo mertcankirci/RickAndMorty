@@ -7,7 +7,9 @@
 
 import SwiftUI
 
-struct RMCharacter: Codable {
+struct RMCharacter: Codable, Identifiable, Equatable {
+
+    
     let id : Int
     let name : String
     let status : RMCharacterStatus
@@ -20,6 +22,21 @@ struct RMCharacter: Codable {
     let episode : [String]
     let url : String
     let created : String
+    
+    static func == (lhs: RMCharacter, rhs: RMCharacter) -> Bool {
+        return lhs.id == rhs.id &&
+            lhs.name == rhs.name &&
+            lhs.status == rhs.status &&
+            lhs.species == rhs.species &&
+            lhs.type == rhs.type &&
+            lhs.gender == rhs.gender &&
+            lhs.origin == rhs.origin &&
+            lhs.location == rhs.location &&
+            lhs.image == rhs.image &&
+            lhs.episode == rhs.episode &&
+            lhs.url == rhs.url &&
+            lhs.created == rhs.created
+    }
 }
 
 enum RMCharacterStatus: String, Codable {

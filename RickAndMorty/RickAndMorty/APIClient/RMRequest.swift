@@ -20,6 +20,10 @@ final class RMRequest {
     
     private let queryParameters : [URLQueryItem]
     
+    private var page: Int = 1
+    
+    
+    
     private var urlString : String {
         var string = Constants.baseUrl
         
@@ -43,6 +47,7 @@ final class RMRequest {
             
             string += argumentString
             
+            
         }
         
         return string
@@ -63,4 +68,5 @@ final class RMRequest {
 
 extension RMRequest {
     static let listOfCharactersRequest = RMRequest(endpoint: .character)
+    static let listOfLocationsRequest = RMRequest(endpoint: .location) //MARK: Pagination here
 }

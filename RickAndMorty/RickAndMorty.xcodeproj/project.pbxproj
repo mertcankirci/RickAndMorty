@@ -22,6 +22,12 @@
 		5468724929EC61AA007BCAC3 /* RMGetAllCharacterResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5468724829EC61AA007BCAC3 /* RMGetAllCharacterResponse.swift */; };
 		5468724B29EC87EC007BCAC3 /* LaunchScreenView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5468724A29EC87EC007BCAC3 /* LaunchScreenView.swift */; };
 		5468724D29EC8B0F007BCAC3 /* LaunchScreen -ViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5468724C29EC8B0F007BCAC3 /* LaunchScreen -ViewModel.swift */; };
+		5468724F29EC9797007BCAC3 /* CharacterListView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5468724E29EC9797007BCAC3 /* CharacterListView.swift */; };
+		5468725129ECB6AD007BCAC3 /* RMGetAllLocationResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5468725029ECB6AD007BCAC3 /* RMGetAllLocationResponse.swift */; };
+		5468725329ECB9F1007BCAC3 /* LocationScrollView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5468725229ECB9F1007BCAC3 /* LocationScrollView.swift */; };
+		54D9FCCC29ED8039005A66D9 /* RMGetSingleCharacterResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = 54D9FCCB29ED8039005A66D9 /* RMGetSingleCharacterResponse.swift */; };
+		54D9FCCE29EDC896005A66D9 /* UIScreen +Ext.swift in Sources */ = {isa = PBXBuildFile; fileRef = 54D9FCCD29EDC896005A66D9 /* UIScreen +Ext.swift */; };
+		54D9FCD029EF0DE4005A66D9 /* CharacterListContainerView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 54D9FCCF29EF0DE4005A66D9 /* CharacterListContainerView.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -41,6 +47,12 @@
 		5468724829EC61AA007BCAC3 /* RMGetAllCharacterResponse.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RMGetAllCharacterResponse.swift; sourceTree = "<group>"; };
 		5468724A29EC87EC007BCAC3 /* LaunchScreenView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LaunchScreenView.swift; sourceTree = "<group>"; };
 		5468724C29EC8B0F007BCAC3 /* LaunchScreen -ViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "LaunchScreen -ViewModel.swift"; sourceTree = "<group>"; };
+		5468724E29EC9797007BCAC3 /* CharacterListView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CharacterListView.swift; sourceTree = "<group>"; };
+		5468725029ECB6AD007BCAC3 /* RMGetAllLocationResponse.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RMGetAllLocationResponse.swift; sourceTree = "<group>"; };
+		5468725229ECB9F1007BCAC3 /* LocationScrollView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LocationScrollView.swift; sourceTree = "<group>"; };
+		54D9FCCB29ED8039005A66D9 /* RMGetSingleCharacterResponse.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RMGetSingleCharacterResponse.swift; sourceTree = "<group>"; };
+		54D9FCCD29EDC896005A66D9 /* UIScreen +Ext.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIScreen +Ext.swift"; sourceTree = "<group>"; };
+		54D9FCCF29EF0DE4005A66D9 /* CharacterListContainerView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CharacterListContainerView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -107,6 +119,9 @@
 			children = (
 				5468722329EC1DB7007BCAC3 /* MainView.swift */,
 				5468724A29EC87EC007BCAC3 /* LaunchScreenView.swift */,
+				5468724E29EC9797007BCAC3 /* CharacterListView.swift */,
+				5468725229ECB9F1007BCAC3 /* LocationScrollView.swift */,
+				54D9FCCF29EF0DE4005A66D9 /* CharacterListContainerView.swift */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -123,6 +138,7 @@
 		5468723429EC3662007BCAC3 /* Extensions */ = {
 			isa = PBXGroup;
 			children = (
+				54D9FCCD29EDC896005A66D9 /* UIScreen +Ext.swift */,
 			);
 			path = Extensions;
 			sourceTree = "<group>";
@@ -152,6 +168,8 @@
 			isa = PBXGroup;
 			children = (
 				5468724829EC61AA007BCAC3 /* RMGetAllCharacterResponse.swift */,
+				5468725029ECB6AD007BCAC3 /* RMGetAllLocationResponse.swift */,
+				54D9FCCB29ED8039005A66D9 /* RMGetSingleCharacterResponse.swift */,
 			);
 			path = APIResponseTypes;
 			sourceTree = "<group>";
@@ -228,15 +246,21 @@
 			files = (
 				5468723F29EC394A007BCAC3 /* RMCharacter.swift in Sources */,
 				5468724329EC3AA1007BCAC3 /* RMSingleLocation.swift in Sources */,
+				5468724F29EC9797007BCAC3 /* CharacterListView.swift in Sources */,
 				5468722429EC1DB7007BCAC3 /* MainView.swift in Sources */,
 				5468722229EC1DB7007BCAC3 /* RickAndMortyApp.swift in Sources */,
 				5468723929EC374B007BCAC3 /* RMRequest.swift in Sources */,
+				54D9FCD029EF0DE4005A66D9 /* CharacterListContainerView.swift in Sources */,
+				54D9FCCE29EDC896005A66D9 /* UIScreen +Ext.swift in Sources */,
+				5468725329ECB9F1007BCAC3 /* LocationScrollView.swift in Sources */,
 				5468724929EC61AA007BCAC3 /* RMGetAllCharacterResponse.swift in Sources */,
 				5468723D29EC3940007BCAC3 /* RMLocation.swift in Sources */,
 				5468723B29EC3810007BCAC3 /* RMEndpoint.swift in Sources */,
 				5468724D29EC8B0F007BCAC3 /* LaunchScreen -ViewModel.swift in Sources */,
 				5468723729EC3738007BCAC3 /* RMService.swift in Sources */,
 				5468724129EC3A33007BCAC3 /* RMOrigin.swift in Sources */,
+				5468725129ECB6AD007BCAC3 /* RMGetAllLocationResponse.swift in Sources */,
+				54D9FCCC29ED8039005A66D9 /* RMGetSingleCharacterResponse.swift in Sources */,
 				5468723329EC365C007BCAC3 /* MainView -ViewModel.swift in Sources */,
 				5468724B29EC87EC007BCAC3 /* LaunchScreenView.swift in Sources */,
 			);
@@ -375,6 +399,7 @@
 				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				IPHONEOS_DEPLOYMENT_TARGET = 16.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -404,6 +429,7 @@
 				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				IPHONEOS_DEPLOYMENT_TARGET = 16.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",

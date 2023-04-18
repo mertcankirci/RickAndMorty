@@ -20,9 +20,10 @@ struct LaunchScreenView: View {
     var body: some View {
         VStack {
             ZStack {
-                Color.purple
+                Image("purple-cosmos")
                 VStack{
                     Image("rmLogo")
+                        
                         .scaleEffect(firstPhaseisAnimating ? 0.65 : 1)
                         .scaleEffect(secondPhaseisAnimating ? (UIApplication.shared.connectedScenes.first as! UIWindowScene).screen.nativeBounds.size.height/4 : 1)
                         
@@ -32,6 +33,7 @@ struct LaunchScreenView: View {
                     
                     Text("Welcome !")
                         .font(.system(size: 22, weight: .bold))
+                        .foregroundColor(.white)
                         .padding(EdgeInsets(top: 40, leading: 8, bottom: 8, trailing: 8))
                 }
             }

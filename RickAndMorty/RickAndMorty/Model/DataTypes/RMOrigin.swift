@@ -7,7 +7,11 @@
 
 import SwiftUI
 
-struct RMOrigin: Codable {
+struct RMOrigin: Codable, Equatable {
     let name : String
     let url : String
+    
+    static func == (lhs: RMOrigin, rhs: RMOrigin) -> Bool {
+        return lhs.name == rhs.name && lhs.url == rhs.url
+    }
 }
