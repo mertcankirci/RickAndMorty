@@ -25,8 +25,8 @@ struct LocationScrollView: View {
                 ForEach(worldNames.indices, id: \.self) { index in
                     Text(worldNames[index].name)
                         .padding()
-                        .background(index == selectedWorldIndex ? Color(hex: 0x62a4ab) : Color(hex: 0x392c21))
-                        .foregroundColor(.white)
+                        .background(index == selectedWorldIndex ? Color(hex: 0x7cf448) : Color(hex: 0x62a4ab))
+                        .foregroundColor(.white) 
                         .cornerRadius(8)
                         .scaleEffect(index == selectedWorldIndex ? 1.2 : 1.0)
                         .onAppear(perform: {

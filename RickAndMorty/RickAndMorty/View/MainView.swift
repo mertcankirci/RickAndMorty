@@ -56,7 +56,7 @@ struct MainView: View {
             }
             .edgesIgnoringSafeArea(.all)
             .frame(maxWidth: .infinity, maxHeight: .infinity)
-            .background(Color(hex: 0xd8bcb5))
+            .background(Color(hex: 0xccdac5))
         }
     }
     
