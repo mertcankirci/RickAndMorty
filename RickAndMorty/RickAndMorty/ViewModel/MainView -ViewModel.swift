@@ -8,7 +8,7 @@
 import SwiftUI
 
 //"https://rickandmortyapi.com/api/location/1"
-
+//MARK: IPad'de patliyo , lazy load ekelenecek , geri kalan bitti !
 extension MainView {
     @MainActor final class MainViewModel: ObservableObject {
         

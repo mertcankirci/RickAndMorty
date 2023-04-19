@@ -22,6 +22,7 @@ struct CharacterListView: View {
                     Image(systemName: "person.badge.clock.fill")
                         .resizable()
                         .frame(width: 100, height: 100)
+                        .foregroundColor(.black)
                 }
                 .frame(width: 120, height: 100)
                 .cornerRadius(20)

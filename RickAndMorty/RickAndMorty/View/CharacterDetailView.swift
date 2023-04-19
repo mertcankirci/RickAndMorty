@@ -11,6 +11,7 @@ struct CharacterDetailView: View {
     @State var character: RMCharacter
     @Environment(\.presentationMode) var presentationMode
     @EnvironmentObject var viewModel: CharacterDetailView.CharacterDetailViewModel
+    @Environment(\.colorScheme) var colorScheme
     
 
     
@@ -24,7 +25,7 @@ struct CharacterDetailView: View {
                         presentationMode.wrappedValue.dismiss()
                     }, label: {
                         Image(systemName: "chevron.left")
-                            .foregroundColor(.black)
+                            .foregroundColor(colorScheme == .dark ? Color.white : Color.black)
                             .font(.system(size: 20, weight: .bold))
                     })
                     .padding(.trailing, 20)
