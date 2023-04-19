@@ -11,6 +11,8 @@ import SwiftUI
 struct RickAndMortyApp: App {
     
     @StateObject var launchScreenManager = LaunchScreenView.LaunchScreenManager()
+    @State private var showLaunchscreen : Bool = true
+    
     
     var body: some Scene {
         WindowGroup {
@@ -18,12 +20,13 @@ struct RickAndMortyApp: App {
                 
                 MainView()
                 
-                if launchScreenManager.state != .completed {
+                if launchScreenManager.showLaunchScreen == true {
                     LaunchScreenView()
+                       // .transition(.move(edge: .leading))
                 }
                 
             }
-            .environmentObject(LaunchScreenView.LaunchScreenManager())
+            .environmentObject(launchScreenManager)
         }
     }
 }

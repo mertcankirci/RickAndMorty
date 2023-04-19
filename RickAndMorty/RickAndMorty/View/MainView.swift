@@ -23,35 +23,52 @@ struct MainView: View {
                         .frame(width: 200)
                         .padding(.top, 50)
                     LocationScrollView(worldNames: viewModel.locationList)
-                        .frame(width: UIScreen.screenWidth, height: 100)
+                        .frame(width: UIScreen.screenWidth, height: UIScreen.screenHeight/10)
                         .environmentObject(viewModel)
-                    CharacterListContainerView(characters: viewModel.filteredCharList)
+                    VStack(alignment: .trailing) {
                         
-                        .environmentObject(viewModel)
-                }
-                .onAppear() {
-                    DispatchQueue.main.asyncAfter(deadline: .now()+5) {
-                        launchScreenManager.dismiss()
+                        VStack {
+                            ForEach(viewModel.filteredCharList) { character in
+                                NavigationLink(destination: CharacterDetailView(character: character).navigationBarBackButtonHidden(true)
+                                    .environmentObject(CharacterDetailView.CharacterDetailViewModel())) {
+                                    CharacterListView(character: character)
+                                }
+                            }
+                            
+                        }
+                        .onChange(of: viewModel.filteredCharList) { _ in
+                            viewModel.objectWillChange.send()
+                            removeDuplicates()
+                        }
                     }
-                    
                 }
-                .onAppear() {
-                    
+                .frame(maxWidth: .infinity)
+                .edgesIgnoringSafeArea(.bottom)
+                
+                .onAppear {
+                    print("Height : \(UIScreen.screenHeight) Width: \(UIScreen.screenWidth)")
                     viewModel.fetchCharacters()
                     viewModel.fetchLocation()
                     
+                        DispatchQueue.main.asyncAfter(deadline: .now()+3) {
+                            launchScreenManager.dismiss()
+                            
+                        }
+                    
                 }
             }
-            .ignoresSafeArea(.all)
-            .frame(maxWidth: .infinity, maxHeight: .infinity)
-            .background(Color.red)
-            
         }
-
-        
-        
     }
     
+    func removeDuplicates() {
+        var uniqueChars: [RMCharacter] = []
+        for char in viewModel.filteredCharList {
+            if !uniqueChars.contains(where: { $0.id == char.id }) {
+                uniqueChars.append(char)
+            }
+        }
+        viewModel.filteredCharList = uniqueChars
+    }
     
 }
 

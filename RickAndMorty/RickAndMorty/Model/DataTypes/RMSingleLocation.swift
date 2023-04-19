@@ -7,9 +7,14 @@
 
 import SwiftUI
 
-struct RMSingleLocation: Codable {
+struct RMSingleLocation: Codable, Hashable {
     let name : String
     let url : String
+    
+    func hash(into hasher: inout Hasher) {
+        hasher.combine(name)
+        hasher.combine(url)
+    }
     
     static func == (lhs: RMSingleLocation, rhs: RMSingleLocation) -> Bool {
         return lhs.name == rhs.name && lhs.url == rhs.url

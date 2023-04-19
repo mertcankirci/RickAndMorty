@@ -17,6 +17,7 @@ struct LaunchScreenView: View {
                                       on: .main,
                                       in: .common).autoconnect()
     
+    
     var body: some View {
         VStack {
             ZStack {
@@ -45,13 +46,17 @@ struct LaunchScreenView: View {
                         firstPhaseisAnimating.toggle()
                     }
                 case .second:
-                    withAnimation(.easeInOut) {
+                    withAnimation(.easeInOut(duration: 0.5)) {
                         secondPhaseisAnimating.toggle()
                     }
                 default:
                     break
                 }
                 
+                
+                if launchScreenManager.state == .completed {
+                    launchScreenManager.showLaunchScreen = false
+                }
             }
             .opacity(secondPhaseisAnimating ? 0 : 1)
         }

@@ -7,7 +7,7 @@
 
 import SwiftUI
 
-struct RMCharacter: Codable, Identifiable, Equatable {
+struct RMCharacter: Codable, Identifiable, Equatable, Hashable {
 
     
     let id : Int
@@ -22,6 +22,21 @@ struct RMCharacter: Codable, Identifiable, Equatable {
     let episode : [String]
     let url : String
     let created : String
+    
+    func hash(into hasher: inout Hasher) {
+        hasher.combine(id)
+        hasher.combine(name)
+        hasher.combine(status)
+        hasher.combine(species)
+        hasher.combine(type)
+        hasher.combine(gender)
+        hasher.combine(origin)
+        hasher.combine(location)
+        hasher.combine(image)
+        hasher.combine(episode)
+        hasher.combine(url)
+        hasher.combine(created)
+    }
     
     static func == (lhs: RMCharacter, rhs: RMCharacter) -> Bool {
         return lhs.id == rhs.id &&

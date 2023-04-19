@@ -15,18 +15,22 @@ enum LaunchScreenPhase {
 
 extension LaunchScreenView {
     @MainActor final class LaunchScreenManager: ObservableObject {
-        @Published private(set) var state: LaunchScreenPhase = .first
+    @Published fileprivate(set) var state: LaunchScreenPhase = .first
+    @Published var showLaunchScreen: Bool = true
         
         
         func dismiss() {
-            
+        
             self.state = .second
             
-            DispatchQueue.main.asyncAfter(deadline: .now() + 0.5) {
+            DispatchQueue.main.asyncAfter(deadline: .now() + 1) {
                 self.state = .completed
+                self.showLaunchScreen = false
             }
+            //MARK: Main view'a geldigi her seferde launch screen tekrar devreye giriyor buna fix at
             
         }
+        
         
     }
 }

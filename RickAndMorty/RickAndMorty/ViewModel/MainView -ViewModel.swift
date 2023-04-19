@@ -15,13 +15,15 @@ extension MainView {
         @Published var characterList: [RMCharacter] = []
         @Published var locationList: [RMLocation] = []
         @Published var filteredLocationList: [RMLocation] = []
-        @Published var selectedWorld : String = ""
+        @Published var selectedWorld : String = "Earh C-137"
         @Published var filteredCharList: [RMCharacter] = []
         @Published var selectedWorldInex : Int = 0
         @Published var filteredCharIdList: [String] = []
 
+
         
         func fetchSingleCharacter(id: String) {
+            
             let request = RMRequest(endpoint: .character,
                         pathComponents: [id])
             RMService.shared.execute(request, expecting: RMCharacter.self) { results in
@@ -30,8 +32,6 @@ extension MainView {
                     DispatchQueue.main.async {
                         self.filteredCharList.append(success)
                     }
-                    print("--------------------")
-                    print(self.filteredCharList)
                     
                 case .failure(let failure):
                 print(String(describing: failure))
@@ -49,12 +49,7 @@ extension MainView {
                         success.results.forEach { char in
                             self.characterList.append(char)
                         }
-                        
-                        
                     }
-                    
-                    
-                    
                 case .failure(let failure):
                     print(String(describing: failure))
                 }
@@ -62,46 +57,42 @@ extension MainView {
         }
         
         func updateFilteredCharacters() {
-            self.filteredCharList = []
+            
+            DispatchQueue.main.async {
+                self.filteredCharList = []
+            }
+            
             filteredLocationList = locationList.filter { $0.name == selectedWorld}
             filteredLocationList.forEach { location in
                 location.residents.forEach { urlString in
-                    guard let url = URL(string: urlString) else { return }
-                    let path = url.path
-                    let components = path.components(separatedBy: "/")
-                    guard let id = components.last else { return }
-                    fetchSingleCharacter(id: id)
-                    
+                    DispatchQueue.main.async {
+                        guard let url = URL(string: urlString) else { return }
+                        let path = url.path
+                        let components = path.components(separatedBy: "/")
+                        guard let id = components.last else { return }
+                        self.fetchSingleCharacter(id: id)
+                    }
                 }
             }
-            
-            
         }
 
-        
         func fetchLocation() {
             
             RMService.shared.execute(.listOfLocationsRequest, expecting: RMGetAllLocationResponse.self) { result in
-             switch result {
-             case .success(let success):
-                 DispatchQueue.main.async {
-                     success.results.forEach { char in
-                         self.locationList.append(char)
-                     }
-                     //print(self.locationList)
-                 }
-                 
-                 
-                 
+                switch result {
+                case .success(let success):
+                    DispatchQueue.main.async {
+                        success.results.forEach { char in
+                            self.locationList.append(char)
+                        }
+                        //print(self.locationList)
+                    }
 
-             case .failure(let failure):
-             print(String(describing: failure))
-             }
-             }
-             
-             
+                case .failure(let failure):
+                    print(String(describing: failure))
+                }
+            }
         }
-        
     }
 }
 

@@ -11,6 +11,7 @@ struct CharacterListView: View {
     @EnvironmentObject var viewModel : MainView.MainViewModel
     @State var character: RMCharacter
     var body: some View {
+
         HStack {
             
             AsyncImage(url: URL(string: character.image)) { image in
@@ -20,17 +21,43 @@ struct CharacterListView: View {
                 } placeholder: {
                     Image(systemName: "person.badge.clock.fill")
                         .resizable()
-                        .frame(width: 150, height: 150)
+                        .frame(width: 100, height: 100)
                 }
-                .frame(width: 150, height: 150)
+                .frame(width: 120, height: 100)
                 .cornerRadius(20)
             
                 
-            Image("male-sign")
-                .resizable()
-                .scaledToFit()
-                .frame(width: 50, height: 50)
-                .padding(.leading, UIScreen.screenHeight/20)
+            if character.gender == RMCharacterGender.male {
+                Image("male-sign")
+                    .resizable()
+                    .scaledToFit()
+                    .frame(width: 50, height: 50)
+                    .padding(.leading, UIScreen.screenHeight/40)
+            }
+            
+            else if character.gender == RMCharacterGender.female {
+                Image("female-sign")
+                    .resizable()
+                    .scaledToFit()
+                    .frame(width: 50, height: 50)
+                    .padding(.leading, UIScreen.screenHeight/40)
+            }
+            
+            else if character.gender == RMCharacterGender.unknown {
+                Image("unknown-sign")
+                    .resizable()
+                    .scaledToFit()
+                    .frame(width: 50, height: 50)
+                    .padding(.leading, UIScreen.screenHeight/40)
+            }
+            
+            else {
+                Image("genderless-sign")
+                    .resizable()
+                    .scaledToFit()
+                    .frame(width: 50, height: 50)
+                    .padding(.leading, UIScreen.screenHeight/40)
+            }
                 
                 ZStack {
                     
@@ -47,19 +74,17 @@ struct CharacterListView: View {
                         Color.gray
                     }
                         
-                    
                     Text("\(character.name)")
-                        .padding(.trailing, 20)
+                        .foregroundColor(.black)
+                        .padding()
                         
                 }
-                .frame(width: 150, height: 150)
+                .frame(width: 120, height: 100)
                 .cornerRadius(20)
-                .padding(.leading, UIScreen.screenHeight/20)
-            
+                .padding(.leading, UIScreen.screenHeight/40)
             
         }
         .frame(width: UIScreen.screenWidth)
-        
         .cornerRadius(20)
             
     }

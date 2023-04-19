@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		541807BD29EF2ECE006F421B /* CharacterDetail -ViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 541807BC29EF2ECE006F421B /* CharacterDetail -ViewModel.swift */; };
 		5468722229EC1DB7007BCAC3 /* RickAndMortyApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5468722129EC1DB7007BCAC3 /* RickAndMortyApp.swift */; };
 		5468722429EC1DB7007BCAC3 /* MainView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5468722329EC1DB7007BCAC3 /* MainView.swift */; };
 		5468722629EC1DB8007BCAC3 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 5468722529EC1DB8007BCAC3 /* Assets.xcassets */; };
@@ -25,12 +26,16 @@
 		5468724F29EC9797007BCAC3 /* CharacterListView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5468724E29EC9797007BCAC3 /* CharacterListView.swift */; };
 		5468725129ECB6AD007BCAC3 /* RMGetAllLocationResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5468725029ECB6AD007BCAC3 /* RMGetAllLocationResponse.swift */; };
 		5468725329ECB9F1007BCAC3 /* LocationScrollView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5468725229ECB9F1007BCAC3 /* LocationScrollView.swift */; };
+		54A4332E29EF58A000D0ADDE /* DetailTextView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 54A4332D29EF58A000D0ADDE /* DetailTextView.swift */; };
+		54A4333029EF5C6400D0ADDE /* Stirng +Ext.swift in Sources */ = {isa = PBXBuildFile; fileRef = 54A4332F29EF5C6400D0ADDE /* Stirng +Ext.swift */; };
+		54BCCDDD29EF2C9500D7A9BF /* CharacterDetailView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 54BCCDDC29EF2C9500D7A9BF /* CharacterDetailView.swift */; };
 		54D9FCCC29ED8039005A66D9 /* RMGetSingleCharacterResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = 54D9FCCB29ED8039005A66D9 /* RMGetSingleCharacterResponse.swift */; };
 		54D9FCCE29EDC896005A66D9 /* UIScreen +Ext.swift in Sources */ = {isa = PBXBuildFile; fileRef = 54D9FCCD29EDC896005A66D9 /* UIScreen +Ext.swift */; };
 		54D9FCD029EF0DE4005A66D9 /* CharacterListContainerView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 54D9FCCF29EF0DE4005A66D9 /* CharacterListContainerView.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		541807BC29EF2ECE006F421B /* CharacterDetail -ViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "CharacterDetail -ViewModel.swift"; sourceTree = "<group>"; };
 		5468721E29EC1DB7007BCAC3 /* RickAndMorty.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = RickAndMorty.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		5468722129EC1DB7007BCAC3 /* RickAndMortyApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RickAndMortyApp.swift; sourceTree = "<group>"; };
 		5468722329EC1DB7007BCAC3 /* MainView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainView.swift; sourceTree = "<group>"; };
@@ -50,6 +55,9 @@
 		5468724E29EC9797007BCAC3 /* CharacterListView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CharacterListView.swift; sourceTree = "<group>"; };
 		5468725029ECB6AD007BCAC3 /* RMGetAllLocationResponse.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RMGetAllLocationResponse.swift; sourceTree = "<group>"; };
 		5468725229ECB9F1007BCAC3 /* LocationScrollView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LocationScrollView.swift; sourceTree = "<group>"; };
+		54A4332D29EF58A000D0ADDE /* DetailTextView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailTextView.swift; sourceTree = "<group>"; };
+		54A4332F29EF5C6400D0ADDE /* Stirng +Ext.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Stirng +Ext.swift"; sourceTree = "<group>"; };
+		54BCCDDC29EF2C9500D7A9BF /* CharacterDetailView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CharacterDetailView.swift; sourceTree = "<group>"; };
 		54D9FCCB29ED8039005A66D9 /* RMGetSingleCharacterResponse.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RMGetSingleCharacterResponse.swift; sourceTree = "<group>"; };
 		54D9FCCD29EDC896005A66D9 /* UIScreen +Ext.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIScreen +Ext.swift"; sourceTree = "<group>"; };
 		54D9FCCF29EF0DE4005A66D9 /* CharacterListContainerView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CharacterListContainerView.swift; sourceTree = "<group>"; };
@@ -110,6 +118,7 @@
 			children = (
 				5468723229EC365C007BCAC3 /* MainView -ViewModel.swift */,
 				5468724C29EC8B0F007BCAC3 /* LaunchScreen -ViewModel.swift */,
+				541807BC29EF2ECE006F421B /* CharacterDetail -ViewModel.swift */,
 			);
 			path = ViewModel;
 			sourceTree = "<group>";
@@ -122,6 +131,8 @@
 				5468724E29EC9797007BCAC3 /* CharacterListView.swift */,
 				5468725229ECB9F1007BCAC3 /* LocationScrollView.swift */,
 				54D9FCCF29EF0DE4005A66D9 /* CharacterListContainerView.swift */,
+				54BCCDDC29EF2C9500D7A9BF /* CharacterDetailView.swift */,
+				54A4332D29EF58A000D0ADDE /* DetailTextView.swift */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -139,6 +150,7 @@
 			isa = PBXGroup;
 			children = (
 				54D9FCCD29EDC896005A66D9 /* UIScreen +Ext.swift */,
+				54A4332F29EF5C6400D0ADDE /* Stirng +Ext.swift */,
 			);
 			path = Extensions;
 			sourceTree = "<group>";
@@ -244,6 +256,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				541807BD29EF2ECE006F421B /* CharacterDetail -ViewModel.swift in Sources */,
 				5468723F29EC394A007BCAC3 /* RMCharacter.swift in Sources */,
 				5468724329EC3AA1007BCAC3 /* RMSingleLocation.swift in Sources */,
 				5468724F29EC9797007BCAC3 /* CharacterListView.swift in Sources */,
@@ -259,7 +272,10 @@
 				5468724D29EC8B0F007BCAC3 /* LaunchScreen -ViewModel.swift in Sources */,
 				5468723729EC3738007BCAC3 /* RMService.swift in Sources */,
 				5468724129EC3A33007BCAC3 /* RMOrigin.swift in Sources */,
+				54A4332E29EF58A000D0ADDE /* DetailTextView.swift in Sources */,
+				54BCCDDD29EF2C9500D7A9BF /* CharacterDetailView.swift in Sources */,
 				5468725129ECB6AD007BCAC3 /* RMGetAllLocationResponse.swift in Sources */,
+				54A4333029EF5C6400D0ADDE /* Stirng +Ext.swift in Sources */,
 				54D9FCCC29ED8039005A66D9 /* RMGetSingleCharacterResponse.swift in Sources */,
 				5468723329EC365C007BCAC3 /* MainView -ViewModel.swift in Sources */,
 				5468724B29EC87EC007BCAC3 /* LaunchScreenView.swift in Sources */,

@@ -14,9 +14,10 @@ struct CharacterListContainerView: View {
         var body: some View {
             VStack {
                 ForEach(characters) { character in
-                    CharacterListView(character: character)
+                    NavigationLink(destination: CharacterDetailView(character: character)) {
+                        CharacterListView(character: character)
+                    }
                 }
-                
             }
             .onChange(of: characters) { _ in
                 viewModel.objectWillChange.send()
