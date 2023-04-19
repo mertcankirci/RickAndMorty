@@ -32,6 +32,7 @@
 		54D9FCCC29ED8039005A66D9 /* RMGetSingleCharacterResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = 54D9FCCB29ED8039005A66D9 /* RMGetSingleCharacterResponse.swift */; };
 		54D9FCCE29EDC896005A66D9 /* UIScreen +Ext.swift in Sources */ = {isa = PBXBuildFile; fileRef = 54D9FCCD29EDC896005A66D9 /* UIScreen +Ext.swift */; };
 		54D9FCD029EF0DE4005A66D9 /* CharacterListContainerView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 54D9FCCF29EF0DE4005A66D9 /* CharacterListContainerView.swift */; };
+		54EA4DE529F0A73F00FDB719 /* Color +Ext.swift in Sources */ = {isa = PBXBuildFile; fileRef = 54EA4DE429F0A73F00FDB719 /* Color +Ext.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -61,6 +62,7 @@
 		54D9FCCB29ED8039005A66D9 /* RMGetSingleCharacterResponse.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RMGetSingleCharacterResponse.swift; sourceTree = "<group>"; };
 		54D9FCCD29EDC896005A66D9 /* UIScreen +Ext.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIScreen +Ext.swift"; sourceTree = "<group>"; };
 		54D9FCCF29EF0DE4005A66D9 /* CharacterListContainerView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CharacterListContainerView.swift; sourceTree = "<group>"; };
+		54EA4DE429F0A73F00FDB719 /* Color +Ext.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Color +Ext.swift"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -151,6 +153,7 @@
 			children = (
 				54D9FCCD29EDC896005A66D9 /* UIScreen +Ext.swift */,
 				54A4332F29EF5C6400D0ADDE /* Stirng +Ext.swift */,
+				54EA4DE429F0A73F00FDB719 /* Color +Ext.swift */,
 			);
 			path = Extensions;
 			sourceTree = "<group>";
@@ -262,6 +265,7 @@
 				5468724F29EC9797007BCAC3 /* CharacterListView.swift in Sources */,
 				5468722429EC1DB7007BCAC3 /* MainView.swift in Sources */,
 				5468722229EC1DB7007BCAC3 /* RickAndMortyApp.swift in Sources */,
+				54EA4DE529F0A73F00FDB719 /* Color +Ext.swift in Sources */,
 				5468723929EC374B007BCAC3 /* RMRequest.swift in Sources */,
 				54D9FCD029EF0DE4005A66D9 /* CharacterListContainerView.swift in Sources */,
 				54D9FCCE29EDC896005A66D9 /* UIScreen +Ext.swift in Sources */,

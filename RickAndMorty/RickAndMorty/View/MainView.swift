@@ -42,21 +42,21 @@ struct MainView: View {
                         }
                     }
                 }
-                .frame(maxWidth: .infinity)
-                .edgesIgnoringSafeArea(.bottom)
                 
                 .onAppear {
-                    print("Height : \(UIScreen.screenHeight) Width: \(UIScreen.screenWidth)")
                     viewModel.fetchCharacters()
                     viewModel.fetchLocation()
-                    
+    
                         DispatchQueue.main.asyncAfter(deadline: .now()+3) {
                             launchScreenManager.dismiss()
-                            
+
                         }
                     
                 }
             }
+            .edgesIgnoringSafeArea(.all)
+            .frame(maxWidth: .infinity, maxHeight: .infinity)
+            .background(Color(hex: 0xd8bcb5))
         }
     }
     

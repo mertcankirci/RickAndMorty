@@ -7,7 +7,7 @@
 
 import SwiftUI
 
-//"https://rickandmortyapi.com/api/location/1
+//"https://rickandmortyapi.com/api/location/1"
 
 extension MainView {
     @MainActor final class MainViewModel: ObservableObject {
@@ -17,11 +17,11 @@ extension MainView {
         @Published var filteredLocationList: [RMLocation] = []
         @Published var selectedWorld : String = "Earh C-137"
         @Published var filteredCharList: [RMCharacter] = []
-        @Published var selectedWorldInex : Int = 0
+        @Published var selectedWorldIndex : Int = 0
         @Published var filteredCharIdList: [String] = []
-
-
+         var selectedWorldIndexPublisher: Published<Int>.Publisher { $selectedWorldIndex }
         
+
         func fetchSingleCharacter(id: String) {
             
             let request = RMRequest(endpoint: .character,
@@ -39,7 +39,6 @@ extension MainView {
             }
         }
         
-        
         func fetchCharacters() {
             
             RMService.shared.execute(.listOfCharactersRequest, expecting: RMGetAllCharactersResponse.self) { result in
@@ -56,6 +55,14 @@ extension MainView {
             }
         }
         
+        func LoadCharScrollView(worldNames: [RMLocation], index: Int) {
+            DispatchQueue.main.async {
+                self.selectedWorld = worldNames[index].name
+                self.selectedWorldIndex = index
+                self.updateFilteredCharacters()
+            }
+        }
+
         func updateFilteredCharacters() {
             
             DispatchQueue.main.async {

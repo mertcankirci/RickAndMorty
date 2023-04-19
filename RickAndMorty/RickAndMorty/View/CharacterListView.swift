@@ -62,13 +62,13 @@ struct CharacterListView: View {
                 ZStack {
                     
                     if character.gender.rawValue == "Male" {
-                        Color.blue
+                        Color(hex: 0x7c3e1d)
                     }
                     else if character.gender.rawValue == "Female" {
-                        Color.pink
+                        Color(hex: 0xf9b798)
                     }
                     else if character.gender.rawValue == "Genderless" {
-                        Color.green
+                        Color(hex: 0xf9bf1e)
                     }
                     else {
                         Color.gray

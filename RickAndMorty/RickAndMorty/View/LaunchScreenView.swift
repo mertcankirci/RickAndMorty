@@ -22,6 +22,8 @@ struct LaunchScreenView: View {
         VStack {
             ZStack {
                 Image("purple-cosmos")
+                    .resizable()
+                    
                 VStack{
                     Image("rmLogo")
                         
@@ -57,6 +59,8 @@ struct LaunchScreenView: View {
                 if launchScreenManager.state == .completed {
                     launchScreenManager.showLaunchScreen = false
                 }
+
+                
             }
             .opacity(secondPhaseisAnimating ? 0 : 1)
         }
