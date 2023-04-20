@@ -33,12 +33,15 @@ extension LaunchScreenView {
         
         func greeting() -> String {
             if isFirstLaunch {
-                isFirstLaunch = false
+                DispatchQueue.main.async {
+                    self.isFirstLaunch = false
+                }
                 return "Welcome!"
             } else {
                 return "Hello!"
             }
         }
+
         
     }
 }

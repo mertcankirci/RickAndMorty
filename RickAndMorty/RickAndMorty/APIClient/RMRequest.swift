@@ -49,8 +49,9 @@ final class RMRequest {
             
             
         }
-        
+        print(string)
         return string
+        
     }
     
     public let httpMethod = "GET"
@@ -68,5 +69,5 @@ final class RMRequest {
 
 extension RMRequest {
     static let listOfCharactersRequest = RMRequest(endpoint: .character)
-    static let listOfLocationsRequest = RMRequest(endpoint: .location) //MARK: Pagination here
+    static let listOfLocationsRequest = RMRequest(endpoint: .location)//MARK: Pagination here
 }

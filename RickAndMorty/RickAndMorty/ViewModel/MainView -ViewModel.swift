@@ -19,7 +19,10 @@ extension MainView {
         @Published var filteredCharList: [RMCharacter] = []
         @Published var selectedWorldIndex : Int = 0
         @Published var filteredCharIdList: [String] = []
-         var selectedWorldIndexPublisher: Published<Int>.Publisher { $selectedWorldIndex }
+        var selectedWorldIndexPublisher: Published<Int>.Publisher { $selectedWorldIndex }
+        private var currentPage = 1
+        @Published var isLoading: Bool = false 
+        
         
 
         func fetchSingleCharacter(id: String) {
@@ -100,6 +103,23 @@ extension MainView {
                 }
             }
         }
+        
+        func loadNextPage(page: Int) {
+            RMService.shared.execute(RMRequest(endpoint: .location, queryParameters: [URLQueryItem(name: "page", value: "\(page)")]), expecting: RMGetAllLocationResponse.self) { result in
+                switch result {
+                case .success(let success):
+                    DispatchQueue.main.async {
+                        success.results.forEach { newLoc in
+                            self.locationList.append(newLoc)
+                        }
+                        
+                    }
+                case .failure(let failure):
+                    print(String(describing: failure))
+                }
+            }
+        }
+        
     }
 }
 

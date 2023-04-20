@@ -14,6 +14,7 @@ struct LocationScrollView: View {
     @State var selectedWorldIndex : Int = 0
     @State var indexSubject = PassthroughSubject<Int, Never>()
     @State private var hasLaunchedOnce = true
+    @State private var page : Int = 1
     
     
     let worldNames: [RMLocation]
@@ -21,12 +22,12 @@ struct LocationScrollView: View {
     
     var body: some View {
         ScrollView(.horizontal, showsIndicators: false) {
-            HStack(spacing: 28) {
+            LazyHStack(spacing: 28) {
                 ForEach(worldNames.indices, id: \.self) { index in
                     Text(worldNames[index].name)
                         .padding()
                         .background(index == selectedWorldIndex ? Color(hex: 0x7cf448) : Color(hex: 0x62a4ab))
-                        .foregroundColor(.white) 
+                        .foregroundColor(.white) //7cf448
                         .cornerRadius(8)
                         .scaleEffect(index == selectedWorldIndex ? 1.2 : 1.0)
                         .onAppear(perform: {
@@ -44,7 +45,10 @@ struct LocationScrollView: View {
                                     selectedWorldIndex = index
                                     viewModel.selectedWorldIndex = selectedWorldIndex
                                     viewModel.updateFilteredCharacters()
-                                    
+//                                    if index%19 == 0 {
+//                                        page+=1
+//                                        viewModel.loadNextPage(page: page)
+//                                    }
                                     
                                     
                                     print(index)
@@ -54,6 +58,7 @@ struct LocationScrollView: View {
                                 
                             }
                         }
+                    
                     
                 }
             }
