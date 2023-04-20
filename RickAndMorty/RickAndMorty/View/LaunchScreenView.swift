@@ -18,6 +18,7 @@ struct LaunchScreenView: View {
                                       in: .common).autoconnect()
     
     
+    
     var body: some View {
         VStack {
             ZStack {
@@ -34,10 +35,10 @@ struct LaunchScreenView: View {
                         .scaleEffect(firstPhaseisAnimating ? 0.65 : 1)
                         .scaleEffect(secondPhaseisAnimating ? (UIApplication.shared.connectedScenes.first as! UIWindowScene).screen.nativeBounds.size.height/4 : 1)
                     
-                    Text("Welcome !")
-                        .font(.system(size: 22, weight: .bold))
-                        .foregroundColor(.white)
-                        .padding(EdgeInsets(top: 40, leading: 8, bottom: 8, trailing: 8))
+                    Text(launchScreenManager.greeting())
+                            .font(.system(size: 22, weight: .bold))
+                            .foregroundColor(.white)
+                            .padding(EdgeInsets(top: 40, leading: 8, bottom: 8, trailing: 8))
                 }
             }
             .onReceive(timer) { input in
@@ -48,7 +49,7 @@ struct LaunchScreenView: View {
                         firstPhaseisAnimating.toggle()
                     }
                 case .second:
-                    withAnimation(.easeInOut(duration: 0.5)) {
+                    withAnimation(.easeInOut(duration: 1)) {
                         secondPhaseisAnimating.toggle()
                     }
                 default:
@@ -59,7 +60,7 @@ struct LaunchScreenView: View {
                 if launchScreenManager.state == .completed {
                     launchScreenManager.showLaunchScreen = false
                 }
-
+                
                 
             }
             .opacity(secondPhaseisAnimating ? 0 : 1)

@@ -17,6 +17,7 @@ extension LaunchScreenView {
     @MainActor final class LaunchScreenManager: ObservableObject {
     @Published fileprivate(set) var state: LaunchScreenPhase = .first
     @Published var showLaunchScreen: Bool = true
+    @AppStorage("firstLaunch") var isFirstLaunch: Bool = true
         
         
         func dismiss() {
@@ -27,10 +28,17 @@ extension LaunchScreenView {
                 self.state = .completed
                 self.showLaunchScreen = false
             }
-            //MARK: Main view'a geldigi her seferde launch screen tekrar devreye giriyor buna fix at
             
         }
         
+        func greeting() -> String {
+            if isFirstLaunch {
+                isFirstLaunch = false
+                return "Welcome!"
+            } else {
+                return "Hello!"
+            }
+        }
         
     }
 }
