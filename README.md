@@ -21,7 +21,7 @@ This is an iOS Project that developed using `SwiftUI` framework for USG Çekirge
 iOS16+
 ## Design Pattern
 
-MVVM design pattern was preferred for making the project more readable, easily testable and maintainable. One of the biggest advantage of MVVM design pattern is that it seperates business and UI logics. Besides, the slight difference between commonly known MVVM and the one used in this project is using IO(Input/Output) structure as structs for view models.
+MVVM design pattern was preferred for making the project more readable, easily testable and maintainable. One of the biggest advantage of MVVM design pattern is that it seperates business and UI logics. 
 <br />
 Also, Singleton used for API service.
 
