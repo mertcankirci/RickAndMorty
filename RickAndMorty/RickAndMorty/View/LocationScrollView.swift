@@ -69,7 +69,7 @@ struct LocationScrollView: View {
                     Spacer()
                     ProgressView()
                         .onAppear {
-                            DispatchQueue.main.async {
+                            DispatchQueue.main.asyncAfter(deadline: .now() + 1) {
                                 viewModel.page += 1
                                 viewModel.loadNextPage(page: viewModel.page)
                             }
