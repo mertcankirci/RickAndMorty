@@ -15,7 +15,7 @@
   
 ## General info
 
-This is an iOS Project that developed using `SwiftUI` framework for USG Çekirge Challange. It is a 2 pages application which are Rick And Morty locations and characters's list which are belong to that location and character detail view.
+This is an iOS Project that developed using `SwiftUI` framework for USG Çekirge Challange. It is a 2 pages application which are Rick And Morty locations and characters's list which are belong to that location and character detail view.easeInOut and spring animations used in launch screen.
 ## Requirements
 
 iOS16+
