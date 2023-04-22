@@ -5,7 +5,6 @@
 * [General info]
 * [Requirements]
 * [Design Pattern]
-* [Technologies]
 * [Setup]
 
 ## Screenshots
