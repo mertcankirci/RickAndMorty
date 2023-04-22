@@ -67,7 +67,7 @@ struct LocationScrollView: View {
                 
                 if viewModel.scrolledToRight {
                     Spacer()
-                    ProgressView() 
+                    ProgressView()
                         .onAppear {
                             DispatchQueue.main.async {
                                 viewModel.page += 1
