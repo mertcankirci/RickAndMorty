@@ -49,7 +49,7 @@ final class RMRequest {
             
             
         }
-        print(string)
+
         return string
         
     }

@@ -7,8 +7,6 @@
 
 import SwiftUI
 
-//"https://rickandmortyapi.com/api/location/1"
-//MARK: IPad'de patliyo , lazy load ekelenecek , geri kalan bitti !
 extension MainView {
     @MainActor final class MainViewModel: ObservableObject {
         
@@ -20,8 +18,14 @@ extension MainView {
         @Published var selectedWorldIndex : Int = 0
         @Published var filteredCharIdList: [String] = []
         var selectedWorldIndexPublisher: Published<Int>.Publisher { $selectedWorldIndex }
-        private var currentPage = 1
-        @Published var isLoading: Bool = false 
+        @Published  var hasLaunchedOnce = true
+        @Published  var page : Int = 1
+        @Published  var scrollViewWidth: CGFloat = 0.0
+        @Published  var contentWidth: CGFloat = .zero
+        @Published  var minX : CGFloat = 0.0
+        @Published  var offSetX: CGFloat = 0.0
+        @Published  var scrolledToRight : Bool = false
+        
         
         
 

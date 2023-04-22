@@ -8,67 +8,77 @@
 import SwiftUI
 import Combine
 
+
+
+
 struct LocationScrollView: View {
     
     @EnvironmentObject var viewModel: MainView.MainViewModel
-    @State var selectedWorldIndex : Int = 0
     @State var indexSubject = PassthroughSubject<Int, Never>()
-    @State private var hasLaunchedOnce = true
-    @State private var page : Int = 1
+
     
     
     let worldNames: [RMLocation]
     
     
     var body: some View {
-        ScrollView(.horizontal, showsIndicators: false) {
-            LazyHStack(spacing: 28) {
+        
+        ScrollView(.horizontal) {
+        
+            LazyHStack(spacing: 34) {
                 ForEach(worldNames.indices, id: \.self) { index in
                     Text(worldNames[index].name)
                         .padding()
-                        .background(index == selectedWorldIndex ? Color(hex: 0x7cf448) : Color(hex: 0x62a4ab))
+                        .background(index == viewModel.selectedWorldIndex ? Color(hex: 0x7cf448) : Color(hex: 0x62a4ab))
                         .foregroundColor(.white) //7cf448
                         .cornerRadius(8)
-                        .scaleEffect(index == selectedWorldIndex ? 1.2 : 1.0)
+                        .scaleEffect(index == viewModel.selectedWorldIndex ? 1.2 : 1.0)
                         .onAppear(perform: {
-                            if hasLaunchedOnce {
+                            if viewModel.hasLaunchedOnce {
                                 DispatchQueue.global().asyncAfter(deadline: .now() + 3.8) {
                                     viewModel.LoadCharScrollView(worldNames: worldNames, index: 0)
                                 }
-                                hasLaunchedOnce = false
+                                viewModel.hasLaunchedOnce = false
                             }
+
                         })
                         .onTapGesture {
                             withAnimation(.spring(response: 0.3, dampingFraction: 0.6)) {
                                 DispatchQueue.main.async {
                                     viewModel.selectedWorld = worldNames[index].name
-                                    selectedWorldIndex = index
-                                    viewModel.selectedWorldIndex = selectedWorldIndex
+                                    viewModel.selectedWorldIndex = index
+                                    viewModel.selectedWorldIndex = viewModel.selectedWorldIndex
                                     viewModel.updateFilteredCharacters()
-//                                    if index%19 == 0 {
-//                                        page+=1
-//                                        viewModel.loadNextPage(page: page)
-//                                    }
-                                    
-                                    
-                                    print(index)
-                                    
                                 }
-                                
-                                
                             }
                         }
-                    
-                    
+                }
+                .background(
+                    GeometryReader { proxy in
+                        Color.clear.onAppear {
+                            viewModel.contentWidth = proxy.size.width
+                            viewModel.minX = proxy.frame(in: .global).minX
+                            viewModel.scrollViewWidth = UIScreen.screenWidth - proxy.safeAreaInsets.leading - proxy.safeAreaInsets.trailing
+                            viewModel.offSetX = -viewModel.minX
+                            viewModel.scrolledToRight = abs(viewModel.offSetX) > 2*viewModel.contentWidth - viewModel.scrollViewWidth
+                        }
+                    }
+                    )
+                
+                if viewModel.scrolledToRight {
+                    Spacer()
+                    ProgressView() 
+                        .onAppear {
+                            DispatchQueue.main.async {
+                                viewModel.page += 1
+                                viewModel.loadNextPage(page: viewModel.page)
+                            }
+                        }
+                    Spacer()
                 }
             }
             .padding()
         }
-        
-        //.background(Color(hex: 0xd8bcb5))
-        
-        
     }
-        
-    
 }
+

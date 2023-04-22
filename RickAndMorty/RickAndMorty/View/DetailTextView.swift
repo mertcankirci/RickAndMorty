@@ -19,7 +19,7 @@ struct DetailTextView: View {
                     .font(.system(size: 22, weight: .bold))
                     .frame(width: 100, alignment: .leading)
                     .fixedSize(horizontal: true, vertical: false)
-                //.padding(.top, 20)
+
                 
             }
             VStack{
@@ -27,7 +27,7 @@ struct DetailTextView: View {
                     .font(.system(size: 22))
                     .frame(width: 200, alignment: .leading)
                     .fixedSize(horizontal: true, vertical: false)
-                //.padding(.top, 5)
+
             }
         }
         .padding(.vertical, 5)
