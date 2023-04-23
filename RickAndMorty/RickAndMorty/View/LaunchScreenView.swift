@@ -36,6 +36,9 @@ struct LaunchScreenView: View {
                         .scaleEffect(secondPhaseisAnimating ? (UIApplication.shared.connectedScenes.first as! UIWindowScene).screen.nativeBounds.size.height/4 : 1)
                     
                     Text(launchScreenManager.greeting())
+                            .foregroundColor(Color(hex: 0x62a4ab))
+                            .scaleEffect(firstPhaseisAnimating ? 0.65 : 1)
+                            .scaleEffect(secondPhaseisAnimating ? (UIApplication.shared.connectedScenes.first as! UIWindowScene).screen.nativeBounds.size.height/4 : 1)
                             .font(.system(size: 22, weight: .bold))
                             .foregroundColor(.white)
                             .padding(EdgeInsets(top: 40, leading: 8, bottom: 8, trailing: 8))
